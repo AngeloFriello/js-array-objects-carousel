@@ -92,6 +92,20 @@ skipDownDOMElements.addEventListener('click' , function (){
 })
 
 
+const idInterval = setInterval(() => {
+	console.log('è passato un secondo')
+	previewDOMElement[currentIndexPreview].classList.remove('bs')
+	previewDOMElement[currentIndexPreview].classList.add('opacity')
+	currentlItemDOMElements[currentIndex].classList.add('d-none')
 
-
-
+	if(currentIndex >= images.length - 1){
+		currentIndex = 0
+		currentIndexPreview = 0
+	}else{
+		currentIndex += 1
+		currentIndexPreview += 1
+	}
+	currentlItemDOMElements[currentIndex].classList.remove('d-none')	
+	previewDOMElement[currentIndexPreview].classList.remove('opacity')
+	previewDOMElement[currentIndexPreview].classList.add('bs')
+}, 3000)
