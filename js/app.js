@@ -46,17 +46,36 @@ for(let i = 0; i < images.length; i++){
     `
 }
 
-let currentlItemDOMElements = document.querySelector('.carousel__item')
-
-images[1].image.classList.add()
+let currentIndex = 0
 
 const skipUpDOMElements = document.querySelector('.skip-up')
-const skipDownDOMElements	= document.querySelector('.skip-down')
+const skipDownDOMElements = document.querySelector('.skip-down')
 
+let currentlItemDOMElements = document.querySelectorAll('.carousel__item')
 
-skipUpDOMElements.addEventListener('Click', function (){
+currentlItemDOMElements[currentIndex].classList.remove('d-none')
 
+skipUpDOMElements.addEventListener('click' , function (){
 
+	currentlItemDOMElements[currentIndex].classList.add('d-none')
+	if(currentIndex >= images.length - 1){
+		currentIndex = 0
+	}else{
+		currentIndex += 1
+	}
+	currentlItemDOMElements[currentIndex].classList.remove('d-none')
+})
+
+skipDownDOMElements.addEventListener('click' , function (){
+	currentlItemDOMElements[currentIndex].classList.add('d-none')
+
+	if (currentIndex <= 0) {
+        
+        currentIndex = (images.length - 1);
+    }else{
+        currentIndex -= 1;
+    }
+	currentlItemDOMElements[currentIndex].classList.remove('d-none')
 })
 
 
