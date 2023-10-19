@@ -6,8 +6,8 @@
 }
 
 img{
-    max-width: 100%;
-    aspect-ratio: 16/9;
+    width: 1200px;;
+    aspect-ratio: 21/9;
     object-fit: cover;
 }
 
@@ -25,3 +25,28 @@ img{
     display: block;
 }
 
+.col-2{
+    flex-basis: ((100% * 2) / 12);
+    display: flex;
+    flex-direction: column;
+}
+
+.col-10{
+    flex-basis: ((100% * 10) / 12);
+}
+
+.row{
+    display: flex;
+}
+
+.col-2 img{
+    width: 248.5px;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+.bs{
+    border: 5px solid yellow;   
+}

@@ -47,35 +47,51 @@ for(let i = 0; i < images.length; i++){
 }
 
 let currentIndex = 0
-
+let currentIndexPreview = 0
+const previewDOMElement = document.querySelectorAll('.preview__item')
 const skipUpDOMElements = document.querySelector('.skip-up')
 const skipDownDOMElements = document.querySelector('.skip-down')
-
-let currentlItemDOMElements = document.querySelectorAll('.carousel__item')
+const currentlItemDOMElements = document.querySelectorAll('.carousel__item')
 
 currentlItemDOMElements[currentIndex].classList.remove('d-none')
+previewDOMElement[currentIndexPreview].classList.remove('opacity')
+previewDOMElement[currentIndexPreview].classList.add('bs')
 
 skipUpDOMElements.addEventListener('click' , function (){
-
+	previewDOMElement[currentIndexPreview].classList.remove('bs')
+	previewDOMElement[currentIndexPreview].classList.add('opacity')
 	currentlItemDOMElements[currentIndex].classList.add('d-none')
+
 	if(currentIndex >= images.length - 1){
 		currentIndex = 0
+		currentIndexPreview = 0
 	}else{
 		currentIndex += 1
+		currentIndexPreview += 1
 	}
-	currentlItemDOMElements[currentIndex].classList.remove('d-none')
+	currentlItemDOMElements[currentIndex].classList.remove('d-none')	
+	previewDOMElement[currentIndexPreview].classList.remove('opacity')
+	previewDOMElement[currentIndexPreview].classList.add('bs')
 })
 
 skipDownDOMElements.addEventListener('click' , function (){
+	previewDOMElement[currentIndexPreview].classList.add('bs')
+	previewDOMElement[currentIndexPreview].classList.add('opacity')
 	currentlItemDOMElements[currentIndex].classList.add('d-none')
 
 	if (currentIndex <= 0) {
-        
+        currentIndexPreview = (images.length - 1);
         currentIndex = (images.length - 1);
     }else{
         currentIndex -= 1;
+		currentIndexPreview -= 1;
     }
 	currentlItemDOMElements[currentIndex].classList.remove('d-none')
+	previewDOMElement[currentIndexPreview].classList.remove('opacity')
+	previewDOMElement[currentIndexPreview].classList.remove('bs')
 })
+
+
+
 
 
