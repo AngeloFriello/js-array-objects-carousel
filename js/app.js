@@ -46,13 +46,17 @@ for(let i = 0; i < images.length; i++){
     `
 }
 
-let carouselItemDOMElements = document.querySelector('.carousel__item')
+let currentlItemDOMElements = document.querySelector('.carousel__item')
 
-carouselItemDOMElements[].classList.add('.active')
+images[1].image.classList.add()
 
 const skipUpDOMElements = document.querySelector('.skip-up')
-const skipDownDOMElements	= document.querySelector('skip-down')
+const skipDownDOMElements	= document.querySelector('.skip-down')
 
-skipUpDOMElements.addEventListener('Click', function (event){
+
+skipUpDOMElements.addEventListener('Click', function (){
+
 
 })
+
+
