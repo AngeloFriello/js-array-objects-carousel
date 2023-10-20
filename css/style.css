@@ -5,10 +5,11 @@
     box-sizing: border-box;
 }
 
-img{
-    width: 1200px;;
+.col-10 img{
+    max-width: 100%;
     aspect-ratio: 21/9;
     object-fit: cover;
+    height: 500px;
 }
 
 .container{
@@ -19,6 +20,7 @@ img{
 
 .carousel{
     position: relative;
+    border: 2px solid blue;
 }
 
 .d-none{
@@ -42,10 +44,13 @@ img{
 .row{
     display: flex;
     margin-top: 200px;
+    max-height: 498px;
 }
 
 .col-2 img{
-    width: 230px;
+    height: 100px ;
+    aspect-ratio: 21/9;
+    object-fit: cover;
 }
 
 .opacity{
@@ -57,23 +62,20 @@ img{
 }
 
 .skip-up{
+    bottom:0px;
+}
+
+.skip{
     position: absolute;
-    bottom:4px;
     left: 50%;
     background-color: white;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: none;
 }
 
 .skip-down{
-    position: absolute;
     top: 0px;
-    left: 50%;
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
 }
 
 .text{
