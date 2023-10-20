@@ -17,6 +17,10 @@ img{
 
 }
 
+.carousel{
+    position: relative;
+}
+
 .d-none{
     display: none;
 }
@@ -37,10 +41,11 @@ img{
 
 .row{
     display: flex;
+    margin-top: 200px;
 }
 
 .col-2 img{
-    width: 248.5px;
+    width: 230px;
 }
 
 .opacity{
@@ -49,4 +54,32 @@ img{
 
 .bs{
     border: 5px solid yellow;   
+}
+
+.skip-up{
+    position: absolute;
+    bottom:4px;
+    left: 50%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+}
+
+.skip-down{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.text{
+    position: absolute;
+    bottom: 40px;
+    right: 0px;
+    color: white;
+    font-size: 30px;
 }

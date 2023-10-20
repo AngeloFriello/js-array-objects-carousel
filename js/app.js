@@ -36,11 +36,9 @@ for(let i = 0; i < images.length; i++){
     	<div>
     	    <img src="${images[i].image}"></img>
     	</div>
-    	<div>
+    	<div class="text">
     	    <p>${images[i].title}</p>
-    	</div>
-    	<div>
-    	    <p>${images[i].text}</p>
+			<p>${images[i].text}</p>
     	</div>
 	</div>
     `
@@ -75,10 +73,10 @@ skipUpDOMElements.addEventListener('click' , function (){
 })
 
 skipDownDOMElements.addEventListener('click' , function (){
-	previewDOMElement[currentIndexPreview].classList.add('bs')
+	
 	previewDOMElement[currentIndexPreview].classList.add('opacity')
 	currentlItemDOMElements[currentIndex].classList.add('d-none')
-
+	previewDOMElement[currentIndexPreview].classList.remove('bs')
 	if (currentIndex <= 0) {
         currentIndexPreview = (images.length - 1);
         currentIndex = (images.length - 1);
@@ -88,12 +86,13 @@ skipDownDOMElements.addEventListener('click' , function (){
     }
 	currentlItemDOMElements[currentIndex].classList.remove('d-none')
 	previewDOMElement[currentIndexPreview].classList.remove('opacity')
-	previewDOMElement[currentIndexPreview].classList.remove('bs')
+	previewDOMElement[currentIndexPreview].classList.add('bs')
 })
 
 
 const idInterval = setInterval(() => {
 	console.log('è passato un secondo')
+	
 	previewDOMElement[currentIndexPreview].classList.remove('bs')
 	previewDOMElement[currentIndexPreview].classList.add('opacity')
 	currentlItemDOMElements[currentIndex].classList.add('d-none')
